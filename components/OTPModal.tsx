@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 
@@ -29,8 +29,7 @@ const OTPModal = ({
   accountId: string;
   email: string;
 }) => {
-
-    const router = useRouter();
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(true);
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -40,9 +39,9 @@ const OTPModal = ({
     setIsLoading(true);
 
     try {
-      const sessionId = await verifySecret({accountId, password});
+      const sessionId = await verifySecret({ accountId, password });
 
-      if (sessionId) router.push('/');
+      if (sessionId) router.push("/");
     } catch (error) {
       console.log("Failed to verify OTP", error);
     }
@@ -52,7 +51,7 @@ const OTPModal = ({
 
   const handleResendOtp = async () => {
     // Call API to resend OTP
-    await sendEmailOTP({email});
+    await sendEmailOTP({ email });
   };
 
   return (
