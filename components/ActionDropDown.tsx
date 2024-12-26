@@ -33,7 +33,7 @@ import {
 import { usePathname } from "next/navigation";
 import { FileDetails, ShareInput } from "./ActionsModalContent";
 
-const ActionDropDown = ({ file }: { file: Models.Document }) => {
+export const ActionDropDown = ({ file }: { file: Models.Document }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const [action, setAction] = useState<ActionType | null>(null);
